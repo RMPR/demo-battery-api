@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   var battery;
@@ -7,22 +7,29 @@
     sec = parseInt(sec, 10);
 
     var hours = Math.floor(sec / 3600),
-        minutes = Math.floor((sec - (hours * 3600)) / 60),
-        seconds = sec - (hours * 3600) - (minutes * 60);
+      minutes = Math.floor((sec - (hours * 3600)) / 60),
+      seconds = sec - (hours * 3600) - (minutes * 60);
 
-    if (hours < 10) { hours   = '0' + hours; }
-    if (minutes < 10) { minutes = '0' + minutes; }
-    if (seconds < 10) { seconds = '0' + seconds; }
+    if (hours < 10) {
+      hours = '0' + hours;
+    }
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+      seconds = '0' + seconds;
+    }
 
     return hours + ':' + minutes;
   }
 
   function readBattery(b) {
     battery = b || battery;
-
+    let rawpercentage = parseFloat((battery.level * 100).toFixed(2));
+    percentage = rawpercentage + '%';
     var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
-        fully,
-        remaining;
+      fully,
+      remaining;
 
     if (battery.charging && battery.chargingTime === Infinity) {
       fully = 'Calculating...';
@@ -39,8 +46,10 @@
     } else {
       remaining = '---';
     }
-
-    document.styleSheets[0].insertRule('.battery:before{width:' + percentage + '}', 0);
+    document.getElementById("battery-indicator").style.width = percentage;
+    if (rawpercentage <= 15) {
+      document.getElementById("battery-indicator").style.backgroundColor = "#DC143C"
+    }
     document.querySelector('.battery-percentage').innerHTML = percentage;
     document.querySelector('.battery-status').innerHTML = battery.charging ? 'Adapter' : 'Battery';
     document.querySelector('.battery-level').innerHTML = percentage;
@@ -60,11 +69,11 @@
   }
 
   window.onload = function () {
-    battery.addEventListener('chargingchange', function() {
+    battery.addEventListener('chargingchange', function () {
       readBattery();
     });
 
-    battery.addEventListener("levelchange", function() {
+    battery.addEventListener("levelchange", function () {
       readBattery();
     });
   };

@@ -14,12 +14,12 @@ http://pazguille.github.io/demo-battery-api/
 http://www.w3.org/TR/battery-status
 
 ## Maintained by
-- Guille Paz (Frontender & Web standards lover)
-- E-mail: [guille87paz@gmail.com](mailto:guille87paz@gmail.com)
-- Twitter: [@pazguille](http://twitter.com/pazguille)
-- Web: [http://pazguille.me](http://pazguille.me)
+- MPR (Open Source Enthusiast)
+- E-mail: [akoudanilo@gmail.com](mailto:akoudanilo@gmail.com)
+- Twitter: [@P_Rufus_](https://twitter.com/P_Rufus_)
+- Web: [https://mymprblog.wordpress.com](https://mymprblog.wordpress.com)
 
 ## License
 Licensed under the MIT license.
 
-Copyright (c) 2014 [@pazguille](http://twitter.com/pazguille).
+Copyright (c) 2018 [@P_Rufus_](https://twitter.com/P_Rufus_).
