@@ -1,12 +1,12 @@
 (function () {
   'use strict';
 
-  var battery;
+  let battery;
 
   function toTime(sec) {
     sec = parseInt(sec, 10);
 
-    var hours = Math.floor(sec / 3600),
+    let hours = Math.floor(sec / 3600),
       minutes = Math.floor((sec - (hours * 3600)) / 60),
       seconds = sec - (hours * 3600) - (minutes * 60);
 
@@ -26,8 +26,8 @@
   function readBattery(b) {
     battery = b || battery;
     let rawpercentage = parseFloat((battery.level * 100).toFixed(2));
-    percentage = rawpercentage + '%';
-    var percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
+    let percentage = rawpercentage + '%';
+    percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
       fully,
       remaining;
 
