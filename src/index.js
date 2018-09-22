@@ -27,9 +27,9 @@
     battery = b || battery;
     let rawpercentage = parseFloat((battery.level * 100).toFixed(2));
     let percentage = rawpercentage + '%';
-    percentage = parseFloat((battery.level * 100).toFixed(2)) + '%',
-      fully,
-      remaining;
+    percentage = parseFloat((battery.level * 100).toFixed(2)) + '%';
+    let  fully;
+    let  remaining;
 
     if (battery.charging && battery.chargingTime === Infinity) {
       fully = 'Calculating...';
