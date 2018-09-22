@@ -3,7 +3,7 @@
 > Battery Status API Demo
 
 ## Demo
-http://pazguille.github.io/demo-battery-api/
+https://rmpr.github.io/demo-battery-api/
 
 ## Support
 - Chrome 38+
